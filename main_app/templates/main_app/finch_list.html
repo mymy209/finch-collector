@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Finch List</h1>
+{% for finch in finch_list %}
+    <p>{{ finch.name }} </p>
+{% endfor %}
+
+{% endblock %}
