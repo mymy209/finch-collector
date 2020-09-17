@@ -3,7 +3,9 @@
 
 <h1>Finch List</h1>
 {% for finch in finch_list %}
-    <p>{{ finch.name }} </p>
+    <a href="{% url 'finches_detail' finch.id%}">
+        <p>{{ finch.name }} </p>
+    </a>
 {% endfor %}
 
 {% endblock %}

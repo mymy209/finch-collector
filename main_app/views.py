@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 from .models import Finch
 
 # Create your views here.
@@ -13,4 +13,7 @@ class FinchCreate(CreateView):
     model = Finch
     fields = '__all__'
     success_url = '/finches/'
+
+class FinchDetail(DetailView):
+    model = Finch
 
