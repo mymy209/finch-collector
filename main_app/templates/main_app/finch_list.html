@@ -2,7 +2,7 @@
 {% block content %}
 
 <h1>Finch List</h1>
-{% for finch in finch_list %}
+{% for finch in finches %}
     <a href="{% url 'finches_detail' finch.id%}">
         <div class="card">
             <div class="card-content">

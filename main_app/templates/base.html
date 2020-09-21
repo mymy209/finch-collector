@@ -14,11 +14,19 @@
         <nav>
             <div class="nav-wrapper cyan darken-4">
                 <ul>
-                    <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Cat Collector</a></li>
+                    <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Finch Collector</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="{% url 'finches_create' %}">Add a Finch</a></li>
-                    <li><a href="{% url 'finches_index' %}">View All My Finches</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
+                        <li><a href="{% url 'toys_index' %}">View All My Toys</a></li>
+                        <li><a href="{% url 'finches_create' %}">Add a Finch</a></li>
+                        <li><a href="{% url 'finches_index' %}">View All My Finches</a></li>
+                        <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                        <li><a href="{% url 'login' %}">Log In</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -27,8 +35,5 @@
         {% block content %}
         {% endblock %}
     </main>
-  	<footer class="page-footer cyan darken-4">
-       <div class="right">All Rights Reserved, &copy; 2020 Finch Collector &nbsp;</div>
-    </footer>
 </body>
 </html>
